@@ -1,11 +1,13 @@
 ---
 name: model-fit-gate
-description: Assess whether the explicitly stated Codex model and reasoning level fit a work request before starting, and reassess during execution when real complexity emerges. Use for new work requests and material scope changes.
+description: Assess model and reasoning-level fit before clear execution tasks or judgments requiring prior context, and reassess when complexity changes. Skip straightforward casual questions and answers.
 ---
 
 # Model fit gate
 
-Use this gate before acting on a work request, and again when inspection or execution changes the difficulty estimate. Treat **Model** as the model choice and **Level** as its reasoning effort.
+First decide whether the request needs this gate. Use it when the user clearly asks you to execute work, or asks for a judgment that depends on understanding prior conversation or other context. A task can be easy and still require the gate when it calls for action. For an obviously simple, casual question or answer that needs no action or contextual judgment, answer directly without requiring Model / Level. Do not turn the exemption into a difficulty test for ordinary conversation.
+
+For requests in scope, apply this gate before acting and again when inspection or execution changes the difficulty estimate. Treat **Model** as the model choice and **Level** as its reasoning effort.
 
 ## Before work
 
