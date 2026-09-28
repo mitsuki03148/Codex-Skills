@@ -16,7 +16,7 @@ Do not confuse visual order with making every object equally boxed, equally cent
 
 Write every fix in the project's styling system. Numeric values in this skill are starting points, not aesthetic laws. Preserve deliberate platform chrome, dense professional tools and project tokens when they still pass the stress tests.
 
-Hit areas and focus behavior belong to `better-accessibility`. Radius, shadows and animation belong to `better-ui`. Line length and text spacing belong to `better-typography`.
+Hit areas and focus behavior belong to `better-accessibility`. Radius, shadows and animation belong to `better-ui`. Line length and text spacing belong to `komorebi-typography`.
 
 ## Structure first, composition second
 
