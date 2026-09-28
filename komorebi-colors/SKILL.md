@@ -17,7 +17,7 @@ Do not force all three through the same rules. Semantic colors need stable meani
 
 Never report a contrast value you did not measure. Never estimate a color you can compute. When legal or standards conformance matters, use the contrast method required by that standard.
 
-Contrast requirements belong to `better-accessibility`. Surfaces, shadows and motion belong to `better-ui`. Spatial emphasis and composition belong to `komorebi-layout`.
+Contrast requirements belong to `komorebi-accessibility`. Surfaces, shadows and motion belong to `komorebi-ui`. Spatial emphasis and composition belong to `komorebi-layout`.
 
 ## Start from the role, not the swatch
 

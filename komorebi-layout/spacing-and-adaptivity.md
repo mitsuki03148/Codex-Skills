@@ -18,7 +18,7 @@ Borderless controls need more clearance because space itself marks the boundary.
 
 Compact professional tools may use less where hit areas stay distinct. Quiet or editorial layouts may use more where the larger pause has a real compositional job.
 
-WCAG target sizes and pseudo-element expansion belong to `better-accessibility`.
+WCAG target sizes and pseudo-element expansion belong to `komorebi-accessibility`.
 
 ## Spacing has rhythm
 

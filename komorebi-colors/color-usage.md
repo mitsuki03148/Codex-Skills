@@ -115,6 +115,6 @@ Every appearance should preserve role, not necessarily the same numeric distance
 
 Design dark mode rather than mirroring it.
 
-A user-requested increased-contrast appearance should make required distinctions more visible. Follow `better-accessibility` and [contrast.md](contrast.md) for the actual gate.
+A user-requested increased-contrast appearance should make required distinctions more visible. Follow `komorebi-accessibility` and [contrast.md](contrast.md) for the actual gate.
 
 Do not invent one universal lightness delta as proof of increased contrast. Measure the required pairs.

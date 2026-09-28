@@ -6,7 +6,7 @@ Identify the real rendered pair first. A text token checked against the page bac
 
 **Report, don't repaint.** When a required pair fails, report the pair, the measured value and the threshold it misses. Change the colors only when the task includes implementation or the user asks for a fix.
 
-`better-accessibility` decides which content is required to meet which accessibility criterion. This file covers color measurement and color-side repair.
+`komorebi-accessibility` decides which content is required to meet which accessibility criterion. This file covers color measurement and color-side repair.
 
 ## WCAG 2.2 is the conformance gate
 
@@ -19,7 +19,7 @@ When WCAG 2.x conformance applies, use the WCAG 2.2 contrast-ratio requirements:
 | Required visual information for UI components / states | `3:1` against adjacent colors |
 | Required graphical objects | `3:1` against adjacent colors |
 
-WCAG 2.2 defines large text using its font-size / bold thresholds. Follow `better-accessibility` for classification.
+WCAG 2.2 defines large text using its font-size / bold thresholds. Follow `komorebi-accessibility` for classification.
 
 Do not round a failing value up to the threshold.
 
