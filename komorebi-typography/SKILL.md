@@ -11,7 +11,7 @@ When reviewing, read the rendered page instead of scanning the code. Bad wrappin
 
 Write every fix in the project's styling system. Treat the numeric values in this skill as starting points, not universal truths. Latin-oriented defaults must not be copied blindly onto Chinese or Japanese text. The [cheat sheet](css-cheat-sheet.md) maps each declaration to its Tailwind equivalent.
 
-The words themselves belong to `better-writing`. Semantic heading structure belongs to `komorebi-accessibility`. Spatial RTL layout and logical properties belong to `komorebi-layout`. Contrast measurement belongs to `komorebi-colors`. This skill owns how text renders, wraps and behaves across scripts.
+The words themselves belong to `komorebi-writing`. Semantic heading structure belongs to `komorebi-accessibility`. Spatial RTL layout and logical properties belong to `komorebi-layout`. Contrast measurement belongs to `komorebi-colors`. This skill owns how text renders, wraps and behaves across scripts.
 
 ## Language first
 

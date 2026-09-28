@@ -67,9 +67,9 @@ Deleting a shadow, border, press scale, icon blur, stagger or entrance animation
 
 | Removed | Owner | Check |
 | --- | --- | --- |
-| User-facing label / instruction / recovery hint | `better-writing` | Meaning or recoverability was lost |
-| Empty / error state copy | `better-writing` | The state still tells the user what happened and what can happen next |
-| Translation catalogue entry | `better-writing` / localization owner | Supported locale still has the required message |
+| User-facing label / instruction / recovery hint | `komorebi-writing` | Meaning or recoverability was lost |
+| Empty / error state copy | `komorebi-writing` | The state still tells the user what happened and what can happen next |
+| Translation catalogue entry | `komorebi-writing` / localization owner | Supported locale still has the required message |
 
 Shorter copy is not a regression when it preserves the same meaning with less burden.
 

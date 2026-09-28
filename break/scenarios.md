@@ -28,7 +28,7 @@ The baseline is not a gold-standard design. It is the control case that makes st
 | Long wrapping content | Multi-line growth, line-height, fixed-height assumptions |
 | Long unbreakable value, only where valid | URL / identifier overflow and missing break strategy |
 
-Breaks usually land in `komorebi-typography`, `komorebi-layout` or `better-writing` depending on the cause.
+Breaks usually land in `komorebi-typography`, `komorebi-layout` or `komorebi-writing` depending on the cause.
 
 ## Language and script
 
@@ -60,7 +60,7 @@ Typography breaks land in `komorebi-typography`; spatial mirroring and container
 
 Prefer a plausible production high-water mark over an arbitrary 10× multiplier when the domain provides one.
 
-Zero-state copy can land in `better-writing`; spatial behavior usually lands in `komorebi-layout`.
+Zero-state copy can land in `komorebi-writing`; spatial behavior usually lands in `komorebi-layout`.
 
 ## Container
 

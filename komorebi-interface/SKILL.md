@@ -9,7 +9,7 @@ This skill runs a cross-discipline interface review.
 
 It routes the interface to the owning domain skills, gathers evidence, checks the seams between domains and consolidates one ranked verdict.
 
-**Orchestration is all it owns.** Accessibility rules belong to `komorebi-accessibility`, structure and composition to `komorebi-layout`, copy to `better-writing`, type to `komorebi-typography`, color to `komorebi-colors`, and visual polish / motion to `komorebi-ui`.
+**Orchestration is all it owns.** Accessibility rules belong to `komorebi-accessibility`, structure and composition to `komorebi-layout`, copy to `komorebi-writing`, type to `komorebi-typography`, color to `komorebi-colors`, and visual polish / motion to `komorebi-ui`.
 
 Never duplicate, weaken or override their rules here.
 
@@ -119,7 +119,7 @@ Review in this order so foundational failures are not hidden by polish:
 
 1. `komorebi-accessibility`
 2. `komorebi-layout`
-3. `better-writing`
+3. `komorebi-writing`
 4. `komorebi-typography`
 5. `komorebi-colors`
 6. `komorebi-ui`
