@@ -19,9 +19,15 @@ Do not claim to switch models or reasoning levels yourself. Use the model choice
 
 ## During work
 
-After the first pass through the key files or source material, reassess the initial estimate against the actual scope. Reassess again when significant new information appears, such as additional systems, higher verification risk, or work that proves much simpler than expected. These are decision points, not a requirement to recheck after every tool call.
+At natural phase boundaries, compare the current pair with the reasoning needed for the **remaining** work. Use whichever boundaries the task actually has:
 
-Stop promptly if the current pair has become unreliable or clearly wasteful. Report the new evidence, the revised difficulty, a concrete model and level, and the state of any work already done. Leave reversible partial work intact so the next run can continue. Do not keep working with a known mismatch just to finish a milestone.
+- **Initial understanding → execution:** After the first pass through key files or source material, revise the estimate using the actual scope, dependencies, ambiguity, and likely implementation work.
+- **Execution → verification:** Reassess when implementation is substantially complete and the next work is testing, review, or interpreting failures. Account for the consequence of missed errors, not just the amount of code left.
+- **Verification → delivery:** Before consequential final actions such as publishing, merging, or pushing, reassess any unresolved judgment and the evidence gathered. A brief mechanical commit or push alone does not justify a model switch.
+
+Also reassess immediately when significant new information appears within a phase: additional systems, higher verification risk, repeated ambiguous failures, or work that proves much simpler than expected. These are decision points, not a requirement to recheck after every tool call or to force phases onto a short task.
+
+Stop promptly if the current pair has become unreliable for the remaining work or clearly wasteful across a meaningful amount of it. Recommend a stronger or lighter pair as appropriate. Report the new evidence, the revised difficulty, a concrete model and level, and the state of any work already done. Leave reversible partial work intact so the next run can continue. Do not keep working with a known mismatch just to finish a milestone.
 
 An ordinary obstacle, failed command, or long task is not by itself proof of a model mismatch. Base the decision on the reasoning and verification the remaining work requires.
 
