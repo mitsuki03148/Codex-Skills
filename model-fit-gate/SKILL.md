@@ -19,7 +19,9 @@ Do not claim to switch models or reasoning levels yourself. Use the model choice
 
 ## During work
 
-Reassess when reading source material, inspecting a repository, or testing reveals materially different complexity. Stop promptly if the current pair has become unreliable or clearly wasteful. Report the new evidence, the revised difficulty, a concrete model and level, and the state of any work already done. Leave reversible partial work intact so the next run can continue. Do not keep working with a known mismatch just to finish a milestone.
+After the first pass through the key files or source material, reassess the initial estimate against the actual scope. Reassess again when significant new information appears, such as additional systems, higher verification risk, or work that proves much simpler than expected. These are decision points, not a requirement to recheck after every tool call.
+
+Stop promptly if the current pair has become unreliable or clearly wasteful. Report the new evidence, the revised difficulty, a concrete model and level, and the state of any work already done. Leave reversible partial work intact so the next run can continue. Do not keep working with a known mismatch just to finish a milestone.
 
 An ordinary obstacle, failed command, or long task is not by itself proof of a model mismatch. Base the decision on the reasoning and verification the remaining work requires.
 
