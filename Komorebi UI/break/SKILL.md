@@ -10,9 +10,9 @@ This skill takes one real component and gives it bad weather.
 
 It renders the component on a temporary page across the states and scenarios that can actually reach it, then marks only what visibly breaks. The page is the primary artifact: a scrollable visual report with the normal case, stress cases and observed failures side by side.
 
-A component built against one happy path can look finished until real content, localization, constrained space, media, state changes or accessibility settings arrive.
+A component built against one happy path can look finished until real content, localization, constrained space, media, state changes, accessibility settings, real touch posture or async / transient timing arrive.
 
-This skill observes rather than judges. A finding is a visible or interactively reproducible break, named in the vocabulary of the domain skill that owns the fix. Reviewing code against a standard belongs to `interface-review` / `komorebi-interface`; exploring alternative designs belongs to `variant`.
+This skill observes rather than judges. A finding is a visible or interactively reproducible break, named in the vocabulary of the domain skill that owns the fix. Reviewing code against a standard belongs to `interface-review` / `komorebi-interface`; embodied phone / tablet comfort belongs to `komorebi-mobile-ux`; exploring alternative designs belongs to `variant`.
 
 Isolation is intentional, but isolation must not erase the environment the component genuinely depends on.
 
@@ -69,7 +69,9 @@ Read the component before generating fixtures:
 - media inputs;
 - localization surface;
 - parent sizing assumptions;
-- interaction / lifecycle states that can be entered without rewriting the component.
+- interaction / lifecycle states that can be entered without rewriting the component;
+- async / timer / transient behavior the real component owns;
+- supported phone / tablet posture or input assumptions when the component is touch-first and repeated reach matters.
 
 [scenarios.md](scenarios.md) contains the scenario axes and the cue for each one.
 
@@ -154,7 +156,7 @@ If runtime inspection is unavailable, provide the harness route and scenario lis
 
 Side-by-side states do not prove transitions.
 
-If the component contract itself contains a meaningful transition that can break — loading → content, collapsed → expanded, validation → error, image placeholder → image — add one small sequence case or an interaction note.
+If the component contract itself contains a meaningful transition that can break — loading → content, collapsed → expanded, validation → error, image placeholder → image, tap → working → result, or transient feedback → dismissal — add one small sequence case or an interaction note.
 
 Do not invent instrumentation or a state machine the component does not own.
 

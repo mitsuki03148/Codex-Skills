@@ -51,7 +51,7 @@ One table, ordered by severity and then reach:
 Rules:
 
 - **Severity** comes from `komorebi-interface`.
-- **Domain** is the owning skill's name.
+- **Domain** is the owning skill without the `better-` prefix.
 - **Location** cites `path/to/file:line`. When there is no source file, cite the exact screen / state / artifact.
 - **Evidence** says what proves the finding: source, rendered state, browser interaction, localized fixture, test, screenshot or another concrete surface.
 - **Before / After** show the current implementation and the smallest actionable replacement.

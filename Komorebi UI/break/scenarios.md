@@ -109,6 +109,25 @@ Accessibility failures land in `komorebi-accessibility`; visual state styling ma
 
 Do not infer transition quality from static side-by-side states. Run the sequence only when it can be exercised without inventing test-only component behavior.
 
+## Interaction timing and transient UI
+
+**Cue: the component owns an async action, timer, transient surface, gesture recognizer or state transition whose timing changes usability.**
+
+Do not invent arbitrary network delay merely to make a component fail. Use supported async fixtures, real test seams or observable production timing where the component contract allows it.
+
+| Scenario | What it catches |
+| --- | --- |
+| Tap → acknowledgement | Silent taps, delayed press feedback, uncertainty before the system visibly accepts input |
+| Tap → working → result | Missing accepted state, global blocking for local work, ownership jumping away from the tapped control |
+| Very fast completion | Loader / skeleton flash that makes a quick action feel unstable |
+| Repeat tap during wait | Duplicate execution or a control that looks active while silently ignoring input |
+| Result → next action | Decorative motion blocking input after the result is already ready |
+| Transient text + action | Snackbar / banner disappearing before read + decide + reach + act can finish |
+| Reduced motion | Timing or state meaning that still depends on motion or unnecessary delay |
+| Long press / double tap, where supported | Custom gesture timing diverging from platform recognizers or hiding a required primary action |
+
+Observed visual timing can be reported here. Human fairness / perceived responsiveness belongs to `komorebi-mobile-ux`; timing accessibility belongs to `komorebi-accessibility`; motion treatment belongs to `komorebi-ui`.
+
 ## Media
 
 **Cue: the component accepts an image, illustration, avatar, video poster or other visual asset.**
@@ -122,6 +141,23 @@ Do not infer transition quality from static side-by-side states. Run the sequenc
 | Transparent / irregular silhouette, where supported | Unexpected background seams or bounds |
 
 Composition and crop breaks usually land in `komorebi-layout`; surface treatment can land in `komorebi-ui`; contrast over media in `komorebi-colors` / `komorebi-accessibility`.
+
+## Mobile / tablet posture
+
+**Cue: the component is touch-first and placement, gesture or repetition can materially change motor cost.**
+
+The harness may render the geometry, but it cannot simulate comfort. Keep real-posture checks explicitly manual and route ergonomic judgement to `komorebi-mobile-ux`.
+
+| Scenario | What it catches |
+| --- | --- |
+| Tall phone / narrow width with repeated action far from the lower reach region | Geometry that may force stretch or regrip; verify physically |
+| Right one-hand and left one-hand manual pass | Strong handedness asymmetry or one-side-only reach |
+| Repeated primary loop | Motor ping-pong, repeated regrip, cumulative travel |
+| iPad two-hand held portrait / landscape, where supported | Frequent controls stranded in a high-cost center region |
+| iPad desk + pointer / keyboard, where supported | Touch-only assumptions in a multi-input surface |
+| Drag / slider / map interaction | Finger occlusion hiding the target or result |
+
+Do not mark “comfortable” or “uncomfortable” from the screenshot alone. Record geometry as observed and posture comfort as `Not verified` until tested.
 
 ## Environment
 
@@ -151,7 +187,13 @@ Good examples:
 - large text × peer action row;
 - English overlay × portrait image crop;
 - dark appearance × translucent overlay over media;
-- mixed-script title × selected state.
+- mixed-script title × selected state;
+- repeated action × tall-phone one-hand posture;
+- iPad held mode × center-positioned repeated control;
+- repeated action × delayed acknowledgement;
+- transient Undo × one-hand far reach;
+- fast completion × loader onset;
+- result ready × entrance / success animation still blocking Next.
 
 Bad approach: generate every combination of every axis.
 

@@ -15,7 +15,7 @@ It owns four things:
 3. reading both added and removed behavior;
 4. classifying findings by causality: `Introduced`, `Regression`, or `Pre-existing`.
 
-Domain rules belong to the domain skills. Severity, consolidation, coverage, the cap and the verdict belong to `komorebi-interface`.
+Domain rules belong to the `komorebi-*` skills. Severity, consolidation, coverage, the cap and the verdict belong to `komorebi-interface`.
 
 Correctness, tests, security and general performance belong to the project's normal code review. Name such a concern once and route it there rather than absorbing it into the interface review.
 
@@ -69,7 +69,8 @@ When there are more consumers than can be inspected credibly, choose a small rep
 - light vs dark appearance;
 - normal vs loading / error / selected / disabled state;
 - text-only vs media / illustration composition;
-- local feature use vs shared global chrome.
+- local feature use vs shared global chrome;
+- phone vs tablet, and held-touch vs desk/pointer mode, when a change alters frequent touch placement, gesture paths or persistent controls.
 
 Reach still matters. A global route or heavily reused component is valuable evidence, but five consumers with the same geometry are weaker than three that expose genuinely different seams.
 
@@ -95,7 +96,7 @@ For each suspicious removal:
 
 1. inspect the surrounding hunk;
 2. look for an equivalent replacement in the same change;
-3. route the remaining signal to the owning domain skill;
+3. route the remaining signal to the owning `komorebi-*` skill;
 4. report it only if that owner confirms the interface got worse.
 
 A deletion can be an improvement. Removing a border, animation, wrapper, token or helper label is not a regression merely because something vanished.
@@ -142,9 +143,16 @@ Examples:
 - UI × layout — a new shadow / surface layer obscures spatial grouping;
 - UI × continuity — a new animation resets a component before moving it;
 - writing × localization — a translated label changes the geometry of a peer action row;
-- imagery × layout — a new crop removes the quiet region that held overlay text.
+- imagery × layout — a new crop removes the quiet region that held overlay text;
+- layout / UI × mobile ergonomics — a relocated repeated action is visually coherent but now forces repeated regrip or finger travel in a supported phone / tablet posture;
+- UI × mobile timing — the final state is correct but the change delays acknowledgement, flashes loading UI, blocks the next action or destabilizes the tapped region;
+- accessibility × mobile timing — a new transient timeout leaves too little time to perceive, decide, reach or recover.
 
-The finding still belongs to one owning domain rule. The seam explains the blast radius and the user impact; it does not create a seventh domain.
+The finding still belongs to one owning domain rule. The seam explains the blast radius and the user impact; it does not create another domain.
+
+When a change moves a bottom bar, toolbar, gesture target, floating action, row action or other repeated touch control, include `komorebi-mobile-ux` in the affected-domain routing and expand to representative mobile / tablet configurations where that placement actually matters.
+
+Also include `komorebi-mobile-ux` when a change alters tap acknowledgement, async working state, loader onset, transient timeout, long-press / double-tap recognition, duplicate-submit prevention or whether animation delays the next action. Route accessibility requirements and motion styling to their own owners rather than duplicating them here.
 
 ## 8. Removed visual signals need context
 

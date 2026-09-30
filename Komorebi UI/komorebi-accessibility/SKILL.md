@@ -13,7 +13,7 @@ Write fixes in the project's own system. Keep accessibility requirements separat
 
 WCAG 2.2 is the conformance baseline for the web unless the project names another target. ARIA Authoring Practices describe interaction patterns for custom widgets; they are guidance for implementing the promised behavior, not a substitute for native HTML.
 
-Contrast measurement belongs to `komorebi-colors`. Text rendering and language-aware typography belong to `komorebi-typography`. Spatial adaptation belongs to `komorebi-layout`. Motion styling belongs to `komorebi-ui`; this skill owns whether motion remains accessible.
+Contrast measurement belongs to `komorebi-colors`. Text rendering and language-aware typography belong to `komorebi-typography`. Spatial adaptation belongs to `komorebi-layout`. Motion styling belongs to `komorebi-ui`; this skill owns whether motion remains accessible. `komorebi-mobile-ux` owns embodied comfort, grip / regrip, reach direction and repeated finger travel; target-size conformance and motor-accessibility requirements stay here.
 
 ## Review by modality, not by checklist volume
 
@@ -86,6 +86,8 @@ Larger targets are usually easier to operate. Around 44×44 CSS px is a useful t
 
 Keep visual size and hit size separate when needed. Extended targets must not create ambiguous overlapping activation areas.
 
+A large compliant target can still sit in a physically expensive place. For repeated phone / tablet touch actions, route placement and regrip questions to `komorebi-mobile-ux`; do not turn a 44px usability target into a claim that the action is ergonomically well placed.
+
 See [hit-areas.md](hit-areas.md).
 
 ## Labels, names and forms
@@ -131,6 +133,18 @@ Reduced motion does not require erasing all feedback. Instant state changes, sma
 WCAG's five-second rule is specific to automatically starting moving, blinking or scrolling content that continues for more than five seconds while presented alongside other content. Auto-updating information has its own control requirement and no five-second exemption. Do not generalize that rule to every toast or timer.
 
 See [motion-and-zoom.md](motion-and-zoom.md).
+
+## Timed and transient UI must not make the user race
+
+When UI disappears, changes automatically or contains a time-limited action, inspect the actual accessibility requirement before choosing a duration.
+
+- use platform accessibility timeout recommendations where available;
+- important information should remain available through a persistent or recoverable path;
+- transient controls need enough time to perceive, understand, reach and operate;
+- a short redundant success status can be auto-dismissed more freely than a consequential action or error;
+- do not turn one WCAG time threshold or one platform example into a universal toast duration.
+
+This skill owns timing accessibility, Reduce Motion and applicable WCAG / platform requirements. `komorebi-mobile-ux` owns the broader human interaction timing question: whether read + decide + reach + act is comfortable in the actual phone / tablet flow.
 
 ## Dynamic content should announce only what matters
 

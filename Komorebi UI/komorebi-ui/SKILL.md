@@ -11,7 +11,7 @@ This skill owns surface treatment, icon language, motion behavior, state polish 
 
 Keep the project's component library, tokens, density and established motion language. Prefer refinement over replacement.
 
-Text wrapping and font rendering belong to `komorebi-typography`. Hit areas, focus, keyboard support, ARIA and reduced motion belong to `komorebi-accessibility`. Grouping, section spacing, breakpoints and spatial composition belong to `komorebi-layout`. Color roles and contrast measurement belong to `komorebi-colors`.
+Text wrapping and font rendering belong to `komorebi-typography`. Hit areas, focus, keyboard support, ARIA and reduced motion belong to `komorebi-accessibility`. Grouping, section spacing, breakpoints and spatial composition belong to `komorebi-layout`. Thumb / finger reach, grip shifts, occlusion and repeated motor cost belong to `komorebi-mobile-ux`. Color roles and contrast measurement belong to `komorebi-colors`.
 
 ## Polish should know when to disappear
 
@@ -74,6 +74,27 @@ Depth can come from:
 Use the lightest mechanism that makes the relationship clear.
 
 A shadow is not the default replacement for a border. Borders are legitimate structure; shadows are legitimate depth. Neither should be added merely because the surface feels unfinished.
+
+## Touch feedback is not ergonomic proof
+
+A polished press, drag or gesture can still be physically awkward. On touch-first phone / tablet flows, hand placement, repeated reach, finger occlusion and regrip belong to `komorebi-mobile-ux`.
+
+This skill owns the **treatment** of press feedback and motion — what changes visually, spatially or haptically and how continuity is expressed. `komorebi-mobile-ux` owns whether the broader touch → feedback → working → result → next-action timing remains humane and efficient. A nice animation is not proof of physical comfort or responsive timing.
+
+## Feedback first, completion second
+
+A tap should gain a visible / tactile acknowledgement before a slower task finishes. Do not make a network round trip the first proof that the control heard the user.
+
+This skill decides **how** the feedback looks and moves. `komorebi-mobile-ux` decides whether acknowledgement, waiting, result and next-action timing form a coherent human interaction chain.
+
+Avoid:
+
+- decorative motion delaying the first acknowledgement;
+- an animation blocking the next action after the system is already ready;
+- a working state that moves ownership away from the tapped control without reason;
+- timing constants copied in as universal recipes.
+
+Study-specific latency thresholds and classic response-time bands are evidence, not universal animation specs.
 
 ## Motion shows causality
 

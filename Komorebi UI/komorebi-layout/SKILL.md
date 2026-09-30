@@ -16,7 +16,7 @@ Do not confuse visual order with making every object equally boxed, equally cent
 
 Write every fix in the project's styling system. Numeric values in this skill are starting points, not aesthetic laws. Preserve deliberate platform chrome, dense professional tools and project tokens when they still pass the stress tests.
 
-Hit areas and focus behavior belong to `komorebi-accessibility`. Radius, shadows and animation belong to `komorebi-ui`. Line length and text spacing belong to `komorebi-typography`.
+Hit areas and focus behavior belong to `komorebi-accessibility`. Radius, shadows and animation belong to `komorebi-ui`. Line length and text spacing belong to `komorebi-typography`. Thumb / finger reach, grip, regrip and attention-to-action motor flow belong to `komorebi-mobile-ux`.
 
 ## Structure first, composition second
 
@@ -102,6 +102,14 @@ Use semantic DOM order and logical CSS properties so the layout survives localiz
 But visual importance does not always mean “top-left”. A focal subject, centred scene, room composition or editorial image can own the visual centre while the semantic reading order remains correct.
 
 For vertical Chinese or Japanese, treat the writing mode as a different composition, not a rotated horizontal layout.
+
+## Visual placement and physical reach are separate maps
+
+A control can sit in the right visual place and still be expensive to operate on a phone or held tablet.
+
+When the surface contains repeated touch actions, do not finalize placement from visual hierarchy alone. Route the same flow through `komorebi-mobile-ux` to check the relevant hand / grip / device configuration, regrip cost and attention-to-action path.
+
+Do not move everything to the bottom merely because it is easier to reach. Layout still owns meaning, reading order and composition; mobile ergonomics adds physical evidence rather than a universal placement law.
 
 ## Priority without shouting
 

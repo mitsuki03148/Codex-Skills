@@ -1,15 +1,15 @@
 ---
 name: komorebi-interface
-description: Combines the interface domain skills into one evidence-based interface review across accessibility, layout, writing, typography, color and UI polish, with cross-domain coherence and multilingual states kept intact.
+description: Combines the `komorebi-*` skills into one evidence-based interface review across accessibility, layout, mobile embodied UX, writing, typography, color and UI polish, with cross-domain coherence and multilingual states kept intact.
 ---
 
-# Komorebi Interface
+# Interface review
 
 This skill runs a cross-discipline interface review.
 
-It routes the interface to the owning domain skills, gathers evidence, checks the seams between domains and consolidates one ranked verdict.
+It routes the interface to the owning `komorebi-*` skills, gathers evidence, checks the seams between domains and consolidates one ranked verdict.
 
-**Orchestration is all it owns.** Accessibility rules belong to `komorebi-accessibility`, structure and composition to `komorebi-layout`, copy to `komorebi-writing`, type to `komorebi-typography`, color to `komorebi-colors`, and visual polish / motion to `komorebi-ui`.
+**Orchestration is all it owns.** Accessibility rules belong to `komorebi-accessibility`, structure and composition to `komorebi-layout`, touch ergonomics / grip / attention-to-action flow to `komorebi-mobile-ux`, copy to `komorebi-writing`, type to `komorebi-typography`, color to `komorebi-colors`, and visual polish / motion to `komorebi-ui`.
 
 Never duplicate, weaken or override their rules here.
 
@@ -37,7 +37,7 @@ A short report from a real inspection beats a long report padded to look thoroug
 
 ## Do not average the interface
 
-A holistic review is not six reports stapled together.
+A holistic review is not a stack of disconnected domain reports.
 
 The goal is to understand one user experience.
 
@@ -48,6 +48,10 @@ After the domain reviews, check the seams:
 - color × accessibility: does the intended mood survive required contrast and state distinction?
 - UI × accessibility: do hover, focus, press and motion remain perceivable without becoming noisy?
 - imagery × layout: do crops, overlays and controls preserve the subject and focal point?
+- layout × mobile ergonomics: does the visually expected action remain physically reasonable for the relevant grip, hand and device?
+- UI × mobile ergonomics: do gestures, repeated actions and contextual controls avoid occlusion, regrip and motor ping-pong?
+- UI × mobile timing: does touch acknowledge promptly, explain waiting and release the next action without decorative delay?
+- accessibility × mobile timing: does transient or timed UI give enough perceive / decide / reach / act time and preserve a durable recovery path where needed?
 - localization × everything: do EN / Traditional Chinese / Japanese remain the same interface rather than three unrelated compositions?
 
 When one root cause crosses domains, assign it to the owner of the underlying rule and mention secondary effects in **Why**. Report it once.
@@ -64,14 +68,16 @@ Also resolve the supported states relevant to that scope:
 
 - normal / default;
 - empty;
-- loading;
+- loading / working;
 - error;
+- transient / timed feedback where the surface uses it;
 - narrow width;
 - larger text / zoom;
 - light / dark where supported;
 - hover / focus / pressed where relevant;
 - EN / Traditional Chinese / Japanese where the surface supports them;
-- RTL only where the product supports it.
+- RTL only where the product supports it;
+- relevant phone / tablet holding or input modes where touch ergonomics materially affects the task.
 
 Do not manufacture states the product does not have.
 
@@ -119,10 +125,11 @@ Review in this order so foundational failures are not hidden by polish:
 
 1. `komorebi-accessibility`
 2. `komorebi-layout`
-3. `komorebi-writing`
-4. `komorebi-typography`
-5. `komorebi-colors`
-6. `komorebi-ui`
+3. `komorebi-mobile-ux` where phone / tablet reach, grip, occlusion, transient UI or interaction timing is relevant
+4. `komorebi-writing`
+5. `komorebi-typography`
+6. `komorebi-colors`
+7. `komorebi-ui`
 
 Load and apply every available owner.
 
@@ -138,7 +145,9 @@ Use the evidence surface closest to the claim.
 
 - Code / source proves declared structure, tokens, semantics and implementation.
 - The rendered interface proves visual hierarchy, crop, wrapping, overlap, motion and actual affordance.
-- Browser / device interaction proves focus, keyboard, scroll, hover, zoom and responsive behavior.
+- Browser / device interaction proves focus, keyboard, scroll, hover, zoom, responsive behavior and observable state timing.
+- Instrumented runtime timing can prove touch-to-feedback / result / next-action intervals; source constants alone do not prove perceived responsiveness.
+- Real-device / realistic-posture testing is the strongest evidence for grip, regrip, reach comfort and repeated motor cost; a simulator can show geometry but not muscle effort.
 - Real localized strings prove multilingual layout.
 - Tests prove only what they actually assert.
 

@@ -1,5 +1,5 @@
 interface:
   display_name: "Break"
-  short_description: "Render one component under hostile inputs and report what breaks"
+  short_description: "Stress-test one real component across plausible states, locales, containers and high-risk seams"
 policy:
   allow_implicit_invocation: false

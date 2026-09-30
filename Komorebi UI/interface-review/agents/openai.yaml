@@ -1,5 +1,5 @@
 interface:
   display_name: "Interface Review"
-  short_description: "Branch, PR and working-tree interface review"
+  short_description: "Change-scoped interface review with causal scope, representative surfaces and regression tracking"
 policy:
   allow_implicit_invocation: false
