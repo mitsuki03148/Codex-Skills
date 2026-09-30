@@ -1,6 +1,6 @@
 ---
 name: model-fit-gate
-description: Assess model and reasoning-level fit before clear execution tasks or judgments requiring prior context, and reassess when complexity changes. Skip straightforward casual questions and answers.
+description: Assess GPT-6 Luna, GPT-6.1 Sol, and GPT-6 Astra model and reasoning-level fit for execution tasks or context-dependent judgments, and reassess as work evolves. Skip straightforward casual Q&A.
 ---
 
 # Model fit gate
@@ -11,7 +11,11 @@ For requests in scope, apply this gate before acting and again when inspection o
 
 ## Before work
 
-1. Estimate the work's difficulty from the request: breadth, ambiguity, unfamiliarity, coupling, required judgment, verification burden, and cost of an error. Recommend the least costly currently available model and level that can complete it reliably. Do not infer difficulty from length alone.
+1. Estimate the work's difficulty from the request: breadth, ambiguity, unfamiliarity, coupling, required judgment, verification burden, and cost of an error. Use this model ladder as the baseline, then recommend the least costly available model and level that can complete the work reliably:
+   - **GPT-6 Luna:** focused, clearly scoped work where efficiency matters.
+   - **GPT-6.1 Sol:** the everyday balance for work needing broader judgment, coding, research, or completeness.
+   - **GPT-6 Astra:** the hardest, most ambiguous, high-consequence, or broad multi-step work when the lower-cost choices are not reliable enough.
+   Choose reasoning effort for the actual task within the selected model's supported levels. Use the current product's model catalog if availability or naming differs. Do not infer difficulty from length alone, and do not recommend Astra just because a task is long.
 2. Look for an explicit **Model** and **Level** stated at the start of the current request. A direct user confirmation for this same active task also counts. A model shown by the app, inferred from an unrelated earlier task, or mentioned only as a possible recommendation does not satisfy this requirement. If either field is missing, **stop before task tools or substantive work**. State the difficulty estimate and a concrete recommended model and level; ask the user to confirm that pair.
 3. If both are present, compare the stated pair with the estimate. If it is too weak for reliable and efficient work, **stop** and recommend a sufficient pair. In particular, call out work that genuinely needs an Astra class model. If it is clearly excessive for the task, **stop** and recommend a less costly sufficient pair. Otherwise proceed.
 
